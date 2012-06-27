@@ -6,7 +6,7 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
 
-        desc "This generator installs jQuery++ #{Jquerypp::Rails::JQUERYPP_VERSION}, jQuery++"
+        desc "This generator installs jQuery++ #{Jquerypp::Rails::JQUERYPP_VERSION}"
         source_root File.expand_path('../../../../../vendor/assets/javascripts', __FILE__)
 
         def remove_prototype
@@ -17,13 +17,13 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
 
         def copy_jquerypp
           say_status("copying", "jQuery++ (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
-          copy_file "jquerypp.js", "public/javascripts/jquerypp.js"
+        copy_file "jquerypp.js", "vendor/assets/javascripts/jquerypp.js"
         end
 
 
         def copy_jquerypp_lib
           say_status("copying", "jQuery++ lib (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
-          copy_file "lib/.*", "public/javascripts/lib"
+          copy_file "lib/.*", "vendor/assets/javascripts/lib"
         end
         
       end
