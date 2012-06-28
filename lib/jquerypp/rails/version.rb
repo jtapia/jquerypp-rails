@@ -1,6 +1,6 @@
 module Jquerypp
   module Rails
-    VERSION = "1.0.1.2"
+    VERSION = "1.0.1.3"
     JQUERYPP_VERSION = "1.0b2"
   end
 end
