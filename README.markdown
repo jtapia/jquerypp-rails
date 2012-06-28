@@ -55,4 +55,4 @@ For more information about all functionality and implementation of it, visit htt
 
 ## Contributing
 
-Feel free to open an issue ticket if you find something that could be improved. A couple notes:
+Feel free to open an issue ticket if you find something that could be improved.
