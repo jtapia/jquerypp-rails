@@ -5,35 +5,25 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
 
-        desc "This generator installs jQuery++ #{Jquerypp::Rails::JQUERYPP_VERSION}, jQuery++"
+        desc "This generator installs jQuery++ #{Jquerypp::Rails::JQUERYPP_VERSION}"
         source_root File.expand_path('../../../../../vendor/assets/javascripts', __FILE__)
 
-        def remove_prototype
-          Rails::PROTOTYPE_JS.each do |name|
-            remove_file "public/javascripts/#{name}.js"
-          end
-        end
-
         def copy_jquerypp
-          say_status("copying", "jQuery++ (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
+          say_status("copying", "jQuery++ (#{Jquerypp::Rails::JQUERYPP_VERSION})", :green)
           copy_file "jquerypp.js", "public/javascripts/jquerypp.js"
         end
 
 
         def copy_jquerypp_lib
-          say_status("copying", "jQuery++ lib (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
-<<<<<<< Updated upstream
-          copy_file "lib/.*", "public/javascripts/lib"
-=======
+          say_status("copying", "jQuery++ lib (#{Jquerypp::Rails::JQUERYPP_VERSION})", :green)
           copy_entry "lib/", "public/javascripts/lib"
->>>>>>> Stashed changes
         end
-        
+
       end
     end
   end
 else
-  module Jquery
+  module Jquerypp
     module Generators
       class InstallGenerator < ::Rails::Generators::Base
         desc "Just show instructions so people will know what to do when mistakenly using generator for Rails 3.1 apps"
