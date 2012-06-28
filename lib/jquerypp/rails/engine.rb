@@ -1,6 +1,4 @@
-require "jquery/assert_select" if ::Rails.env.test?
-
-module Jquery
+module Jquerypp
   module Rails
     class Engine < ::Rails::Engine
     end
