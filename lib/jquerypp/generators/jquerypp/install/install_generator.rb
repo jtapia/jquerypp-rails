@@ -17,16 +17,14 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
         def copy_jquerypp
           say_status("copying", "jQuery++ (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
           copy_file "jquerypp.js", "public/javascripts/jquerypp.js"
+          copy_file "jquerypp.js", "vendor/assets/javascripts/jquerypp.js"
         end
 
 
         def copy_jquerypp_lib
           say_status("copying", "jQuery++ lib (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
-<<<<<<< Updated upstream
-          copy_file "lib/.*", "public/javascripts/lib"
-=======
           copy_entry "lib/", "public/javascripts/lib"
->>>>>>> Stashed changes
+          copy_entry "lib/", "vendor/assets/javascripts/lib"
         end
         
       end
