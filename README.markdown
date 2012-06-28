@@ -2,6 +2,8 @@
 
 jQuery++! For Rails! So great.
 
+jQuery++ is a collection of all the DOM utilities and special events jQuery forgot about. Come learn about jQuery++ and how it can be useful to your project.
+
 This gem provides:
 
   * jQuery++

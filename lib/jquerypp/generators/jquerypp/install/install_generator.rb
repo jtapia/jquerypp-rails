@@ -1,6 +1,5 @@
 require 'rails'
 
-# Supply generator for Rails 3.0.x or if asset pipeline is not enabled
 if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
   module Jquerypp
     module Generators
@@ -23,7 +22,11 @@ if ::Rails.version < "3.1" || !::Rails.application.config.assets.enabled
 
         def copy_jquerypp_lib
           say_status("copying", "jQuery++ lib (#{Jquerypp::Rails::JQUERY_VERSION})", :green)
+<<<<<<< Updated upstream
           copy_file "lib/.*", "public/javascripts/lib"
+=======
+          copy_entry "lib/", "public/javascripts/lib"
+>>>>>>> Stashed changes
         end
         
       end
